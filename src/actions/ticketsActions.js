@@ -1,33 +1,33 @@
 import {
-    AGREGAR_PUBLICACION,
-    AGREGAR_PUBLICACION_EXITO,
-    AGREGAR_PUBLICACION_ERROR,
-    COMENZAR_DESCARGA_PUBLICACIONES,
-    DESCARGAR_PUBLICACIONES_EXITO,
-    DESCARGAR_PUBLICACIONES_ERROR,
-    OBTENER_PUBLICACION,
-    PUBLICACION_OBTENIDA_EXITO,
-    PUBLICACION_OBTENIDA_ERROR
+    AGREGAR_TICKET,
+    AGREGAR_TICKET_EXITO,
+    AGREGAR_TICKET_ERROR,
+    COMENZAR_DESCARGA_TICKETES,
+    DESCARGAR_TICKETES_EXITO,
+    DESCARGAR_TICKETES_ERROR,
+    OBTENER_TICKET,
+    TICKET_OBTENIDA_EXITO,
+    TICKET_OBTENIDA_ERROR
 } from '../types';
 
 import clienteAxios from '../config/axios';
 import Swal from 'sweetalert2';
 import {db} from "../services/firebase";
-//Esta es la que se utilizara en la vista
 
-//Crear nuevas publicaciones
-export function crearNuevaPublicacionAction(publicacion){
+
+//Crear nuevos Ticketes
+export function crearNuevoTicketAction(ticket){
     return async (dispatch) =>{
-        dispatch(agregarPublicacion());
+        dispatch(agregarTicket());
         try {
             //Aca se insertara en la base de datos | API Con axios
-            //await clienteAxios.post('publicaciones', publicacion);
-            await db.ref("publicaciones").push({
-                ...publicacion
+            //await clienteAxios.post('TICKETes', TICKET);
+            await db.ref("Ticketes").push({
+                ...TICKET
             });
             
             //Si todo sale bien, actualizare el state
-            dispatch(agregarPublicacionExito(publicacion))
+            dispatch(agregarTicketExito(ticket))
 
             //Alerta
             Swal.fire(
@@ -38,7 +38,7 @@ export function crearNuevaPublicacionAction(publicacion){
         } catch (error) {
             console.log(error);
             //Si hay un error cambiar el state
-            dispatch(agregarPublicacionError(true));
+            dispatch(agregarTicketError(true));
 
             //alerta de error
             Swal.fire({
@@ -50,66 +50,66 @@ export function crearNuevaPublicacionAction(publicacion){
     }
 }
 
-const agregarPublicacion = () =>({
-    type: AGREGAR_PUBLICACION,
+const agregarTicket = () =>({
+    type: AGREGAR_TICKET,
     payload:true
 })
 
-//Si la publicacion se guarda en la base de datos
-const agregarPublicacionExito = (publicacion) =>({
-    type:AGREGAR_PUBLICACION_EXITO,
-    payload:publicacion
+//Si la TICKET se guarda en la base de datos
+const agregarTicketExito = (ticket) =>({
+    type:AGREGAR_TICKET_EXITO,
+    payload:TICKET
 })
 
 //Si hubo un error
-const agregarPublicacionError = (estado)=>({
-    type:AGREGAR_PUBLICACION_ERROR,
+const agregarTicketError = (estado)=>({
+    type:AGREGAR_TICKET_ERROR,
     payload:estado
 });
 
-//Función que descarga los publicacions de la base de datos
-export function obtenerPublicacionesAction(){
+//Función que descarga los TICKETs de la base de datos
+export function obtenerTicketesAction(){
     return async (dispatch)=>{
-        dispatch(descargarPublicaciones());
+        dispatch(descargarTicketes());
         try {
             //Hago la operacion para traer los datos de la base de datos API
-            //const respuesta = await clienteAxios.get('/publicaciones');
-            await db.ref("publicaciones").on("value", snapshot => {
+            //const respuesta = await clienteAxios.get('/TICKETes');
+            await db.ref("Ticketes").on("value", snapshot => {
             let datapublications = [];
             snapshot.forEach((snap) => {
                 datapublications.push(snap.val());
                 })
-            dispatch(descargaPublicacionesExitosa(datapublications))
+            dispatch(descargaTicketesExitosa(datapublications))
             });
         } catch (error) {   
-            dispatch(descargaPublicacionesError())
+            dispatch(descargaTicketesError())
         }
     }
 }
 
-const descargarPublicaciones= () =>({
-    type:COMENZAR_DESCARGA_PUBLICACIONES,
+const descargarTicketes= () =>({
+    type:COMENZAR_DESCARGA_TICKETES,
     payload:true
 });
 
-const descargaPublicacionesExitosa = publicacion =>({
-    type: DESCARGAR_PUBLICACIONES_EXITO,
-    payload: publicacion
+const descargaTicketesExitosa = ticket =>({
+    type: DESCARGAR_TICKETES_EXITO,
+    payload: TICKET
 })
 
-const descargaPublicacionesError = () =>({
-    type:DESCARGAR_PUBLICACIONES_ERROR,
+const descargaTicketesError = () =>({
+    type:DESCARGAR_TICKETES_ERROR,
     payload:true
 })
 
-//Esto es una accion para traer una publicacion
-export function obtenerPublicacionVer(publicacion){
+//Esto es una accion para traer una TICKET
+export function obtenerTicketVer(ticket){
     return (dispatch) =>{
-        dispatch( obtenerPublicacionVerAction(publicacion) )
+        dispatch( obtenerTicketVerAction(ticket) )
     }
 }
 
-const obtenerPublicacionVerAction = publicacion =>({
-    type: OBTENER_PUBLICACION,
-    payload: publicacion
+const obtenerTicketVerAction = ticket =>({
+    type: OBTENER_TICKET,
+    payload: TICKET
 })
