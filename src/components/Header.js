@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../services/firebase";
 
-//Forma de hacer el mas ->  &#43;
 
 const Header = () => {
   return (
@@ -13,11 +12,11 @@ const Header = () => {
                 {auth().currentUser ?
                     <div className="navbar-nav">
                         <span className="navbar-text mr-3">Bienvenido - {auth().currentUser.email}</span>
-                        <Link className="nav-item nav-link mr-3 btn btn-outline-secondary" to={"/dashboard"}>Generar Tickets</Link>
+                        <Link className="nav-item nav-link mr-3 btn btn-outline-secondary" to={"/ticketes/nueva"}>Generar Tickets</Link>
                         <button className="nav-item nav-link mr-3 btn btn-outline-secondary" onClick={() => auth().signOut()}>Cerrar Sesion</button>
                     </div> :
                     <div className="navbar-nav">
-                        <Link className="nav-item nav-link mr-3 btn btn-outline-secondary" to={"/login"}>Iniciar Sesion</Link>
+                        <Link className="nav-item nav-link mr-3 btn btn-outline-secondary" to={"/"}>Iniciar Sesion</Link>
                         <Link className="nav-item nav-link mr-3 btn btn-outline-secondary" to={"/signup"}>Registrarse</Link>
                     </div>}
             </div>

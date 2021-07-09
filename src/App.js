@@ -21,6 +21,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 import { auth } from "./services/firebase";
+import Footer from "./components/Footer";
 
 function PrivateRoute({ component: Component, authenticated, ...rest }) {
   return (
@@ -121,6 +122,8 @@ class App extends Component {
               />
             </Switch>
           </div>
+          <Footer />
+          
         </Provider>
       </Router>
     );

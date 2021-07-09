@@ -78,7 +78,7 @@ export default class SignUp extends Component {
                         <button className="btn btn-primary px-5" type="submit">Registrarse</button>
                     </div>
                     <br/>
-                    <p>Ya tienes una cuenta? <Link to="/login">Click aqui para Iniciar Sesion</Link></p>
+                    <p>Ya tienes una cuenta? <Link to="/">Click aqui para Iniciar Sesion</Link></p>
                 </form>
                 </div>
                 </div>

@@ -7,8 +7,21 @@ const VerTicket = () => {
   const ticket = useSelector(
     (state) => state.ticketes.ticketobtener
   );
+
+  const CalcularPrecio = () =>{
+    if (categoria == "Motos") {
+      return (precioMoto);
+      
+    } else {
+     return precio;
+      
+    }
+
+  }
+
   //Hago destructuring
-  const { celda, imagen, placa, hora, categoria, precio, id } =
+  let precioMoto = 5000;
+  const { celda, imagen, placa, hora, categoria, precio, id} =
   ticket;
   console.log(ticket);
 
@@ -27,17 +40,19 @@ const VerTicket = () => {
         </div>
         <div className="col-6">
           <div class="card text-white bg-primary mb-3">
-            <div class="card-header">Información</div>
+            <div class="card-header"><h1>Contenido Ticket</h1></div>
             <div class="card-body">
-              <h5>Descripcion:</h5>
+              <h5>Placa Vehiculo:</h5>
               <p class="card-text">{placa}</p>
-              <h5>Contacto:</h5>
+              <h5>Hora Ingreso:</h5>
               <p class="card-text">{hora}</p>
-              <p>
-                Precio:<strong>{precio}$</strong>
-              </p>
-               <h5>Categoria:</h5>
+              <h5>Categoria:</h5>
               <p class="card-text">{categoria}</p>
+              <p>
+                Precio:   
+              <strong>{CalcularPrecio()}$</strong>
+              </p>
+               
             </div>
           </div>
         </div>
