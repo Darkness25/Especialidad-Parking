@@ -11,14 +11,12 @@ export default class HomePage extends Component {
             <section>
               <div>
                 <div className="container text-center py-5">
-                  <h1 className="display-4">Bienvenido a PubliServ</h1>
+                  <h1 className="display-4">SISTEMA DE PARQUEADERO</h1>
                   <p className="lead">
-                    Este es un lugar para publicar los servicios que ofreces,
-                    Tambien puedes ver lo que otros han publicado es una
-                    plataforma para ofrecer tus conocimientos y/o servicios
+                    Para Obtener Acceso a las funcionalidades, debes iniciar sesion.
                   </p>
                   <hr />
-                  🤠 👩‍💻 👨‍🏫 👨‍🎓 👨‍🍳 👩‍🌾 🕵️‍♂️ 👨‍⚕️ 👩‍🔧 👨‍🔬
+                  
                 </div>
               </div>
             </section>

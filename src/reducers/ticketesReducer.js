@@ -1,62 +1,62 @@
 import {
-    AGREGAR_PUBLICACION,
-    AGREGAR_PUBLICACION_EXITO,
-    AGREGAR_PUBLICACION_ERROR,
-    COMENZAR_DESCARGA_PUBLICACIONES,
-    DESCARGAR_PUBLICACIONES_EXITO,
-    DESCARGAR_PUBLICACIONES_ERROR,
-    OBTENER_PUBLICACION
+    AGREGAR_TICKET,
+    AGREGAR_TICKET_EXITO,
+    AGREGAR_TICKET_ERROR,
+    COMENZAR_DESCARGA_TICKETES,
+    DESCARGAR_TICKETES_EXITO,
+    DESCARGAR_TICKETES_ERROR,
+    OBTENER_TICKET
 } from '../types';
 
 //Cada reducer tiene su propio state
 const initialState = {
-    publicaciones: [],
+    ticketes: [],
     error:null,
     loading:false,
-    publicacionobtener:null
+    ticketobtener:null
 }
 
 export default function(state = initialState, action){
     switch(action.type){
-        case AGREGAR_PUBLICACION:
+        case AGREGAR_TICKET:
             return {
                 ...state,
                 loading:action.payload
             }
-        case AGREGAR_PUBLICACION_EXITO:
+        case AGREGAR_TICKET_EXITO:
             return{
                 ...state,
                 loading:false,
-                publicaciones : [...state.publicaciones, action.payload]
+                publicaciones : [...state.ticketes, action.payload]
             }
-        case AGREGAR_PUBLICACION_ERROR:
+        case AGREGAR_TICKET_ERROR:
             return{
                 ...state,
                 loading: false,
                 error: action.payload
             }
-        case COMENZAR_DESCARGA_PUBLICACIONES:
+        case COMENZAR_DESCARGA_TICKETES:
             return{
                 ...state,
                 loadign:action.payload
             }
-        case DESCARGAR_PUBLICACIONES_EXITO:
+        case DESCARGAR_TICKETES_EXITO:
             return{
                 ...state,
                 loading:false,
                 error: null,
-                publicaciones: action.payload
+                ticketes: action.payload
             }
-        case DESCARGAR_PUBLICACIONES_ERROR:
+        case DESCARGAR_TICKETES_ERROR:
             return{
                 ...state,
                 loading: false,
                 error: action.payload
             }
-        case OBTENER_PUBLICACION:
+        case OBTENER_TICKET:
             return{
                 ...state,
-                publicacionobtener:action.payload
+                ticketobtener:action.payload
             }   
         default:
             return state;

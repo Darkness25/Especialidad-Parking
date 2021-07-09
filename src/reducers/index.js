@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
-import publicacionesReducer from './publicacionesReducer';
+import ticketesReducer from './ticketesReducer';
 
 export default combineReducers({
-    publicaciones:publicacionesReducer
+    ticketes:ticketesReducer
 })
 

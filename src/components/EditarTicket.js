@@ -11,12 +11,12 @@ const EditarTicket = () => {
             </h2>
             <form>
               <div className="form-group">
-                <label>Titulo</label>
+                <label>Celda</label>
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Titulo Ticket"
-                  name="titulo"
+                  placeholder="Celda"
+                  name="celda"
                 />
               </div>
               <div className="form-group">
@@ -29,21 +29,21 @@ const EditarTicket = () => {
                 />
               </div>
               <div className="form-group">
-                <label>Descripcion💬</label>
+                <label>Placa del Vehiculo</label>
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Breve descripción"
-                  name="descripcion"
+                  placeholder="Placa"
+                  name="placa"
                 />
               </div>
               <div className="form-group">
-                <label>Contacto</label>
+                <label>Fecha y Hora de Ingreso</label>
                 <input
                   type="text"
                   className="form-control"
                   placeholder="Contacto correo"
-                  name="contacto"
+                  name="hora"
                 />
               </div>
               <div className="form-group">

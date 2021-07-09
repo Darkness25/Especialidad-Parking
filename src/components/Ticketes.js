@@ -30,7 +30,7 @@ const Ticketes = () => {
     <div className="container">
       <div className="row">
         <div className="card-columns">
-          {publicaciones.length === 0
+          {ticketes.length === 0
             ? "No hay registros"
             : ticketes.map((ticket) => (
                 <Ticket key={ticket.id} ticket={ticket} />

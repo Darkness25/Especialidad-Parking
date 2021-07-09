@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { BsFillPeopleFill } from "react-icons/bs";
 
 const VerTicket = () => {
   //publicacion que traere de mi store
@@ -7,7 +8,7 @@ const VerTicket = () => {
     (state) => state.ticketes.ticketobtener
   );
   //Hago destructuring
-  const { celda, imagen, placa, conhoratacto, categoria, precio, id } =
+  const { celda, imagen, placa, hora, categoria, precio, id } =
   ticket;
   console.log(ticket);
 

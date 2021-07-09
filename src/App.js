@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import SignUp from "./components/signUp";
-import Publicaciones from "./components/Publicaciones";
-import NuevaPublicacion from "./components/NuevaPublicacion";
-import EditarPublicacion from "./components/EditarPublicacion";
-import VerPublicacion from "./components/VerPublicacion";
+import Ticketes from "./components/Ticketes";
+import NuevoTicket from "./components/NuevoTicket";
+import EditarTicket from "./components/EditarTicket";
+import VerTicket from "./components/VerTicket";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import {
   BrowserRouter as Router,
@@ -44,7 +45,7 @@ function PublicRoute({ component: Component, authenticated, ...rest }) {
         authenticated === false ? (
           <Component {...props} />
         ) : (
-          <Redirect to="/publicaciones" />
+          <Redirect to="/ticketes" />
         )
       }
     />
@@ -92,15 +93,15 @@ class App extends Component {
               />
               <PrivateRoute
                 exact
-                path="/publicaciones/nueva"
+                path="/ticketes/nueva"
                 authenticated={this.state.authenticated}
-                component={NuevaPublicacion}
+                component={NuevoTicket}
               />
               <PrivateRoute
                 exact
-                path="/publicaciones"
+                path="/ticketes"
                 authenticated={this.state.authenticated}
-                component={Publicaciones}
+                component={Ticketes}
               />
               <PublicRoute
                 exact
@@ -109,14 +110,14 @@ class App extends Component {
                 component={SignUp}
               />
               <PrivateRoute
-                path="/publicaciones/editar/:id"
+                path="/ticketes/editar/:id"
                 authenticated={this.state.authenticated}
-                component={EditarPublicacion}
+                component={EditarTicket}
               />
               <PrivateRoute
-                path="/publicaciones/ver/:id"
+                path="/ticketes/ver/:id"
                 authenticated={this.state.authenticated}
-                component={VerPublicacion}
+                component={VerTicket}
               />
             </Switch>
           </div>

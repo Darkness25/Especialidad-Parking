@@ -23,7 +23,7 @@ export function crearNuevoTicketAction(ticket){
             //Aca se insertara en la base de datos | API Con axios
             //await clienteAxios.post('TICKETes', TICKET);
             await db.ref("Ticketes").push({
-                ...TICKET
+                ...ticket
             });
             
             //Si todo sale bien, actualizare el state
@@ -58,7 +58,7 @@ const agregarTicket = () =>({
 //Si la TICKET se guarda en la base de datos
 const agregarTicketExito = (ticket) =>({
     type:AGREGAR_TICKET_EXITO,
-    payload:TICKET
+    payload:ticket
 })
 
 //Si hubo un error
@@ -94,7 +94,7 @@ const descargarTicketes= () =>({
 
 const descargaTicketesExitosa = ticket =>({
     type: DESCARGAR_TICKETES_EXITO,
-    payload: TICKET
+    payload: ticket
 })
 
 const descargaTicketesError = () =>({
@@ -111,5 +111,5 @@ export function obtenerTicketVer(ticket){
 
 const obtenerTicketVerAction = ticket =>({
     type: OBTENER_TICKET,
-    payload: TICKET
+    payload: ticket
 })

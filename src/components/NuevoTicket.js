@@ -50,7 +50,7 @@ const NuevoTicket = ({ history }) => {
     //Revisar errores
 
     //Crear la nueva ticket
-    agregarticket({
+    agregarTicket({
       id,
       celda,
       imagen,
@@ -74,7 +74,7 @@ const NuevoTicket = ({ history }) => {
             </h2>
             <form onSubmit={submitNuevoTicket}>
               <div className="form-group">
-                <label>celda </label>
+                <label>Celda </label>
                 <input
                   type="text"
                   className="form-control"
@@ -84,7 +84,7 @@ const NuevoTicket = ({ history }) => {
                 />
               </div>
               <div className="form-group">
-                <label>placa</label>
+                <label>Placa</label>
                 <input
                   type="text"
                   className="form-control"
