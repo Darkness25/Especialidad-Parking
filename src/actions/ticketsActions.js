@@ -47,8 +47,8 @@ export function crearNuevoTicketAction(ticket){
             //alerta de error
             Swal.fire({
                 icon:error,
-                title:'Hubo un error',
-                text: 'Hubo un error, verifica por favor'
+                title:'Error',
+                text: 'Hubo un error, Celda ya se encuentra reservada'
             })
         }
     }
@@ -76,7 +76,7 @@ export function obtenerTicketesAction(){
     return async (dispatch)=>{
         dispatch(descargarTicketes());
         try {
-            //Hago la operacion para traer los datos de la base de datos API
+            // datos de la base de datos API
             //const respuesta = await clienteAxios.get('/TICKETes');
             await db.ref("Ticketes").on("value", snapshot => {
             let datapublications = [];
@@ -106,7 +106,7 @@ const descargaTicketesError = () =>({
     payload:true
 })
 
-//Esto es una accion para traer una TICKET
+//accion para traer un TICKET
 export function obtenerTicketVer(ticket){
     return (dispatch) =>{
         dispatch( obtenerTicketVerAction(ticket) )

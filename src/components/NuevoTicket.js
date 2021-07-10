@@ -42,7 +42,7 @@ const NuevoTicket = ({ history }) => {
     let imagen = "";
     switch (categoria) {
         case "Motos":
-            imagen = "https://ibb.co/6wnMS77"
+            imagen = <img src="images/car.jpg" alt="" />
             break;
         case "Carros":
             imagen = "https://ibb.co/xMnBcxy"
@@ -82,6 +82,22 @@ const NuevoTicket = ({ history }) => {
 
   }
 
+  
+  const ObtenerFecha = () =>{
+    
+  var fecha = new Date(); //Fecha actual
+  var mes = fecha.getMonth()+1; //obteniendo mes
+  var dia = fecha.getDate(); //obteniendo dia
+  var ano = fecha.getFullYear(); //obteniendo año
+  if(dia<10)
+    dia='0'+dia; //agrega cero si el menor de 10
+  if(mes<10)
+    mes='0'+mes //agrega cero si el menor de 10
+  document.getElementById('fechaActual').value=ano+"-"+mes+"-"+dia;
+  
+  }
+
+
   return (
     <div className="row justify-content-center hero-image">
       <div className="col-md-4">
@@ -98,6 +114,9 @@ const NuevoTicket = ({ history }) => {
                   className="form-control "
                   name="celda"
                   value={celda}
+                  minLength={1}
+                           maxLength={2}
+                           required={true}
                   onChange={(e) => setCelda(e.target.value)}
                 />
               </div>
@@ -108,6 +127,9 @@ const NuevoTicket = ({ history }) => {
                   className="form-control"
                   name="placa"
                   value={placa}
+                  minLength={4}
+                           maxLength={6}
+                           required={true}
                   onChange={(e) => setPlaca(e.target.value)}
                 />
               </div>
@@ -118,12 +140,13 @@ const NuevoTicket = ({ history }) => {
                   className="form-control"
                   name="hora"
                   value={hora}
+                  required = "true "
                   onChange={(e) => setHora(e.target.value)}
                 />
               </div>
               <div className="form-group">
                 <label>Categoria</label>
-                <select  className="form-control" name="categoria"  value={categoria} onChange={(e) => setCategoria(e.target.value)}>
+                <select  className="form-control" name="categoria" required="true" value={categoria} onChange={(e) => setCategoria(e.target.value)}>
                   <option></option>
                   <option value="Motos">Motos</option>
                   <option>Carros</option>                  
@@ -140,13 +163,17 @@ const NuevoTicket = ({ history }) => {
                   value={CalcularPrecio()}
                   onChange={(e) => setPrecio(Number(e.target.value))}
                 />
-              </div>
-              <button
+
+                <br />
+
+                <button
                 type="submit"
                 className="btn btn-primary font-weight-bold text-uppercase d-block w-100"
               >
                 Agregar
               </button>
+              </div>
+              
             </form>
 
             {cargando ? <p>Cargando..</p> : null}

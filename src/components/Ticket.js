@@ -9,19 +9,18 @@ import { uuid } from "uuidv4";
 const Ticket = ({ ticket }) => {
   
   const dispatch = useDispatch();
-  const history = useHistory(); //Me permite redireccionar y tener un historial
+  const history = useHistory(); 
   const { id, celda, imagen, placa, hora, categoria, precio } = ticket;
 
-  //Funcion que redirige de forma programada
   const redireccionarVer = ticket =>{
       dispatch(obtenerTicketVer(ticket))
-      //Lo que hace es que cuando de en el clic siempre me tome el elemento que estoy llamando
+      
       history.push(`/ticketes/ver/${ticket.id}`)
   }
 
   const redireccionarEditar = ticket =>{
     dispatch(obtenerTicketVer(ticket))
-    //Lo que hace es que cuando de en el clic siempre me tome el elemento que estoy llamando
+    
     history.push(`/ticketes/ver/${ticket.id}`)
 }
 
