@@ -41,6 +41,7 @@ const Ticket = ({ ticket }) => {
           type="button"
           onClick={()=> redireccionarVer(ticket)}
           className="btn btn-primary text-center form-control">Ver mas</button>
+          
       </div>
     </div>
   );

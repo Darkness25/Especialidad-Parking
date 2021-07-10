@@ -8,24 +8,30 @@ const VerTicket = () => {
     (state) => state.ticketes.ticketobtener
   );
 
-  const CalcularPrecio = () =>{
-    if (categoria == "Motos") {
-      return (precioMoto);
-      
-    } else {
-     return precio;
-      
-    }
-
-  }
+  
 
   
 
   //Hago destructuring
-  let precioMoto = 5000;
+  
   const { celda, imagen, placa, hora, categoria, precio, id} =
   ticket;
   console.log(ticket);
+
+  const CalcularPrecio = () =>{
+
+    let precioMoto=1000;
+    let precioCarro=2000;
+
+    if (categoria == "Motos") {
+      return (precioMoto);
+      
+    } else {
+     return precioCarro;
+      
+    }
+
+  }
 
   return (
     <div className="container">
@@ -42,10 +48,11 @@ const VerTicket = () => {
               <h5>Categoria:</h5>
               <p class="card-text">{categoria}</p>
               <p>
-                Precio:   
+                Precio Por Hora:   
               <strong>{CalcularPrecio()}$</strong>
               </p>
-              
+
+                         
                
             </div>
             

@@ -42,10 +42,10 @@ const NuevoTicket = ({ history }) => {
     let imagen = "";
     switch (categoria) {
         case "Motos":
-            imagen = "https://miro.medium.com/max/1024/1*vxjAHkrXbGG6gOiPZgjeZA.jpeg"
+            imagen = "https://ibb.co/6wnMS77"
             break;
         case "Carros":
-            imagen = "https://geeksroom.com/wp-content/uploads/2018/05/professional-services-home.jpg"
+            imagen = "https://ibb.co/xMnBcxy"
             break;
             }
     //Le mando el id
