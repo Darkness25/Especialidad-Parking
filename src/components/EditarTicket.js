@@ -19,15 +19,7 @@ const EditarTicket = () => {
                   name="celda"
                 />
               </div>
-              <div className="form-group">
-                <label>Imagen | Por el momento texto📸</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="URL de imagen"
-                  name="imagen"
-                />
-              </div>
+              
               <div className="form-group">
                 <label>Placa del Vehiculo</label>
                 <input

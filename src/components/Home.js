@@ -1,5 +1,9 @@
 import React, { Component } from "react";
+import SignUpComponent from "../inicioBootstrap/signup.component";
 import Login from "./Login"
+import TodoInput from "./TodoInput";
+import TodoItem from "./TodoItem";
+import TodoList from "./TodoList";
 //import { Link } from "react-router-dom";
 
 export default class HomePage extends Component {
@@ -26,6 +30,9 @@ export default class HomePage extends Component {
     </div>*/}
         <div className="container">
           <Login/>
+
+
+
           
         </div>
       </div>

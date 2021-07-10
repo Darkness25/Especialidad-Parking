@@ -28,18 +28,9 @@ const VerTicket = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-6">
-          <div className="card border-light mb-3">
-            <div className="card-header">
-              <h4 className="card-title text-center">{celda}</h4>
-            </div>
-            <div className="card-body">
-              <img src={imagen} className="img-fluid" />
-            </div>
-          </div>
-        </div>
-        <div className="col-6">
-          <div class="card text-white bg-primary mb-3">
+
+      <div className="col-6">
+          <div class="card text-white bg-dark mb-3">
             <div class="card-header"><h1>Contenido Ticket</h1></div>
             <div class="card-body">
               <h5>Placa Vehiculo:</h5>
@@ -56,6 +47,17 @@ const VerTicket = () => {
             </div>
           </div>
         </div>
+        <div className="col-6">
+          <div className="card border-light mb-3">
+            <div className="card-header">
+              <h4 className="card-title text-center">Celda Asignada: {celda}</h4>
+            </div>
+            <div className="card-body">
+              <img src={imagen} className="img-fluid" />
+            </div>
+          </div>
+        </div>
+        
       </div>
     </div>
   );

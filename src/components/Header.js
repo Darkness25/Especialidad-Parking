@@ -9,10 +9,17 @@ const Header = () => {
         <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
             <div className="container">
                 <Link className="navbar-brand" to={"/"}>Jesus Lara Sistema de Parqueadero</Link>
+
+                
                 {auth().currentUser ?
                     <div className="navbar-nav">
-                        <span className="navbar-text mr-3">Bienvenido - {auth().currentUser.email}</span>
-                        <Link className="nav-item nav-link mr-3 btn btn-outline-secondary" to={"/ticketes/nueva"}>Generar Tickets</Link>
+                    <Link className="nav-item nav-link mr-3 btn btn-outline-secondary " to={"/"}>Reservar Celdas</Link>
+                    &nbsp;
+                    <Link className="nav-item nav-link mr-3 btn btn-outline-secondary " to={"/ticketes/nueva"}>Generar Tickets</Link>
+
+                    
+                        <span className="navbar-text mr-3 btn text-primary">Bienvenido - {auth().currentUser.email}</span>
+                        
                         <button className="nav-item nav-link mr-3 btn btn-outline-secondary" onClick={() => auth().signOut()}>Cerrar Sesion</button>
                     </div> :
                     <div className="navbar-nav">

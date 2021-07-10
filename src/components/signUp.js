@@ -53,8 +53,8 @@ export default class SignUp extends Component {
                     </h1>
                     <p className="lead">Por favor ingresa tu Correo y Contraseña</p>
                     <div className="form-group">
-                        <input className="form-control"
-                               placeholder="Email"
+                        <input className="form-control text-center"
+                               placeholder="Correo Electronico"
                                name="email"
                                type="email"
                                onChange={this.handleChange}
@@ -63,9 +63,10 @@ export default class SignUp extends Component {
                                minLength={15}
                                maxLength={40}/>
                     </div>
+                    <br />
                     <div className="form-group">
-                        <input className="form-control"
-                               placeholder="Password"
+                        <input className="form-control text-center"
+                               placeholder="Contraseña"
                                name="password"
                                onChange={this.handleChange}
                                value={this.state.password} type="password"
@@ -75,6 +76,7 @@ export default class SignUp extends Component {
                     </div>
                     <div className="form-group">
                         {this.state.error ? <p className="text-danger">{this.state.error}</p> : null}
+                        <br />
                         <button className="btn btn-primary px-5" type="submit">Registrarse</button>
                     </div>
                     <br/>

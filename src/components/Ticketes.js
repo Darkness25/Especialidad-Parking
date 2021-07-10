@@ -4,6 +4,9 @@ import Ticket from "./Ticket";
 // Redux
 import { useSelector, useDispatch } from "react-redux";
 import { obtenerTicketesAction } from "../actions/ticketsActions";
+import TodoInput from "./TodoInput";
+import TodoList from "./TodoList";
+import TodoItem from "./TodoItem";
 
 const Ticketes = () => {
   const dispatch = useDispatch();
@@ -38,8 +41,11 @@ const Ticketes = () => {
 
               {ticketes.length === 0
                 ? "No hay registros"
+                
                 : ticketes.map((ticket) => (
+                  
                   <Ticket key={ticket.id} ticket={ticket} />
+                  
                 ))}
             </div>
           </div>

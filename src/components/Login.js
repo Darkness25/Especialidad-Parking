@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { signin, signInWithGoogle } from "../helpers/auth";
-import { BsFillPeopleFill } from "react-icons/bs";
+import { BsFillPeopleFill} from "react-icons/bs";
+import {FaGoogle} from "react-icons/fa"
+
 
 
 export default class Login extends Component {
@@ -58,14 +60,14 @@ render() {
                         onSubmit={this.handleSubmit}>
                         <h1 className={"m-5"}>Inicio de Sesion <br />< BsFillPeopleFill/></h1>
                         <button className="btn btn-danger mr-2" type="button" onClick={this.googleSignIn}>
-                            Iniciar con Google
+                            Iniciar con Google <FaGoogle />
                         </button>                            
                         <p className="lead m-3"> O <br /> Inicia Sesion con tu Correo y Contraseña</p>
                         <hr/>
                         <div className="form-group">
                             <input
-                                className="form-control"
-                                placeholder="Email"
+                                className="form-control text-center"
+                                placeholder="Correo Electronico"
                                 name="email"
                                 type="email"
                                 onChange={this.handleChange}
@@ -74,10 +76,11 @@ render() {
                                 minLength={15}
                                 maxLength={40}/>
                         </div>
+                        <br />
                         <div className="form-group">
                             <input
-                                className="form-control"
-                                placeholder="Password"
+                                className="form-control text-center"
+                                placeholder="Contraseña"
                                 name="password"
                                 onChange={this.handleChange}
                                 value={this.state.password}
@@ -88,6 +91,8 @@ render() {
                         </div>
                         <div className="form-group">
                             {this.state.error ? (<p className="text-danger">{this.state.error}</p>) : null}
+
+                            <br />
                             <button className="btn btn-primary px-5" type="submit">Iniciar Sesion</button>
                         </div>
                         <hr/>
