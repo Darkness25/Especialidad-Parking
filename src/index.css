@@ -9,7 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   
-  background: #12c2e9;
+  background: rgb(143, 140, 136);
   
   
 }
@@ -77,8 +77,8 @@ body {
   font-weight: 400;
   font-family: sans-serif;
   background: #1c1e1f57;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #819397, #819397);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right,#819397, #819397); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right, #484a4d, #3f4242);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,#262829, #819397); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   
 }
 
@@ -138,4 +138,25 @@ body, html, .App, #root, .outer {
   color: #167bff;
 }
 
+.hero-image {
+  background-image: url("images/CarLogin.jpg");
+height:800px;
 
+  background-position: center;
+  background-repeat: no-repeat;
+background-size: cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+}
+
+.Ncontainer2ARLogin{
+
+
+  background-color: #606163;
+  margin-top: 30px;
+  width: 80%;
+  height: 80%;
+  position: relative;
+  font-display: white;
+
+}

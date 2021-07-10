@@ -18,6 +18,13 @@ const Ticket = ({ ticket }) => {
       //Lo que hace es que cuando de en el clic siempre me tome el elemento que estoy llamando
       history.push(`/ticketes/ver/${ticket.id}`)
   }
+
+  const redireccionarEditar = ticket =>{
+    dispatch(obtenerTicketVer(ticket))
+    //Lo que hace es que cuando de en el clic siempre me tome el elemento que estoy llamando
+    history.push(`/ticketes/ver/${ticket.id}`)
+}
+
   return (
     <div className="card border-primary mb-3 card-w container">
       <div className="card-header">

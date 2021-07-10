@@ -41,17 +41,19 @@ export default class SignUp extends Component {
 
   render() {
     return (
-      <div className="container text-center">
+      <div className="container text-center hero-image">
             <div className="row">
             <div className={"col-md-3"} />
-               <div className="col-md-6">
-                <form className="mt-5 py-5 px-5" onSubmit={this.handleSubmit}>
-                    <h1>
+               <div className="col-md-7">
+               <div className="containerAR">
+                <form className="mt-2 py-5 px-5 content-align-center" onSubmit={this.handleSubmit}>
+                   <strong> <h1 className="text">
                     Registrate en Sistema de Parqueadero <br />
                     
                         
                     </h1>
-                    <p className="lead">Por favor ingresa tu Correo y Contraseña</p>
+                    
+                    <p className="lead text-white">Por favor ingresa tu Correo y Contraseña</p> </strong>
                     <div className="form-group">
                         <input className="form-control text-center"
                                placeholder="Correo Electronico"
@@ -81,7 +83,9 @@ export default class SignUp extends Component {
                     </div>
                     <br/>
                     <p>Ya tienes una cuenta? <Link to="/">Click aqui para Iniciar Sesion</Link></p>
+                    
                 </form>
+                </div>
                 </div>
                 </div>
                 

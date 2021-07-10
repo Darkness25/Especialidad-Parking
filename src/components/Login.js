@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { signin, signInWithGoogle } from "../helpers/auth";
+import { signin, signInWithGoogle, signInWithFacebook, signInWithTwitter, signInWithGitHub, signInWithMicrosoft } from "../helpers/auth";
 import { BsFillPeopleFill} from "react-icons/bs";
-import {FaGoogle} from "react-icons/fa"
+import {FaFacebook, FaGithub, FaGoogle, FaMicrosoft, FaTwitter, FaYahoo} from "react-icons/fa"
 
 
 
@@ -36,9 +36,43 @@ async handleSubmit(event) {
     }
 }
 
+async facebookSignIn() {
+    try {
+        await signInWithFacebook();
+    } catch (error) {
+        this.setState({error: error.message});
+    }
+}
+
 async googleSignIn() {
     try {
         await signInWithGoogle();
+    } catch (error) {
+        this.setState({error: error.message});
+    }
+}
+
+
+
+async twitterSignIn() {
+    try {
+        await signInWithTwitter();
+    } catch (error) {
+        this.setState({error: error.message});
+    }
+}
+
+async githubSignIn() {
+    try {
+        await signInWithGitHub();
+    } catch (error) {
+        this.setState({error: error.message});
+    }
+}
+
+async microsoftSignIn() {
+    try {
+        await signInWithMicrosoft();
     } catch (error) {
         this.setState({error: error.message});
     }
@@ -50,19 +84,30 @@ async googleSignIn() {
 
 render() {
     return (
-        <div className="container text-center">
+        <div className="container text-center hero-image">
             <div className="row">
-                <div className={"col-md-3"} />
-                <div className="col-md-6">
+                <div className={"col-md-4"} />
+                <div className="col-md-5">
+                <div className="Ncontainer2ARLogin">
                     <form
-                        className="py-5 px-5 content-align-center"
+                        className="py-5 px-3 content-align-center"
                         autoComplete="off"
                         onSubmit={this.handleSubmit}>
-                        <h1 className={"m-5"}>Inicio de Sesion <br />< BsFillPeopleFill/></h1>
+                        <h1 className={""}>Inicio de Sesion <br />< BsFillPeopleFill/></h1>
+
+                        Ingresa con tu red social favorita.
+                       
+                        <hr/>
+
                         <button className="btn btn-danger mr-2" type="button" onClick={this.googleSignIn}>
-                            Iniciar con Google <FaGoogle />
-                        </button>                            
-                        <p className="lead m-3"> O <br /> Inicia Sesion con tu Correo y Contraseña</p>
+                         <FaGoogle />                         
+                        </button>
+                        
+                        
+                        <strong>                        
+                         <br />
+                         <br /> Inicia Sesion con tu Correo y Contraseña 
+                        </strong> 
                         <hr/>
                         <div className="form-group">
                             <input
@@ -98,6 +143,7 @@ render() {
                         <hr/>
                         <p>No tienes una cuenta? <Link to="/signup">Click aqui para registrarse</Link></p>
                     </form>
+                    </div>
                 </div>
             </div>
         </div>

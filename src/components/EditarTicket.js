@@ -36,6 +36,7 @@ const EditarTicket = () => {
                   className="form-control"
                   placeholder="Contacto correo"
                   name="hora"
+                  
                 />
               </div>
               <div className="form-group">

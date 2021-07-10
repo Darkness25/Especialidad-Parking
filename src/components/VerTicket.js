@@ -19,6 +19,8 @@ const VerTicket = () => {
 
   }
 
+  
+
   //Hago destructuring
   let precioMoto = 5000;
   const { celda, imagen, placa, hora, categoria, precio, id} =
@@ -32,7 +34,7 @@ const VerTicket = () => {
       <div className="col-6">
           <div class="card text-white bg-dark mb-3">
             <div class="card-header"><h1>Contenido Ticket</h1></div>
-            <div class="card-body">
+            <div class="card-body" id="Imp">
               <h5>Placa Vehiculo:</h5>
               <p class="card-text">{placa}</p>
               <h5>Hora Ingreso:</h5>
@@ -43,8 +45,12 @@ const VerTicket = () => {
                 Precio:   
               <strong>{CalcularPrecio()}$</strong>
               </p>
+              
                
             </div>
+            
+
+            
           </div>
         </div>
         <div className="col-6">

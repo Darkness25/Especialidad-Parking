@@ -36,12 +36,15 @@ const NuevoTicket = ({ history }) => {
       return;
     }
     //Valido para saber que imagen mandar
+
+   
+
     let imagen = "";
     switch (categoria) {
-        case "Tecnologia":
+        case "Motos":
             imagen = "https://miro.medium.com/max/1024/1*vxjAHkrXbGG6gOiPZgjeZA.jpeg"
             break;
-        case "Hogar":
+        case "Carros":
             imagen = "https://geeksroom.com/wp-content/uploads/2018/05/professional-services-home.jpg"
             break;
             }
@@ -49,7 +52,7 @@ const NuevoTicket = ({ history }) => {
     let id = uuidv4();
     //Revisar errores
 
-    //Crear la nueva ticket
+    //Crear el  ticket
     agregarTicket({
       id,
       celda,
@@ -64,11 +67,26 @@ const NuevoTicket = ({ history }) => {
     history.push("/ticketes");
   };
 
+  const CalcularPrecio = () =>{
+
+    let precioMoto=1000;
+    let precioCarro=2000;
+
+    if (categoria == "Motos") {
+      return (precioMoto);
+      
+    } else {
+     return precioCarro;
+      
+    }
+
+  }
+
   return (
-    <div className="row justify-content-center">
-      <div className="col-md-8">
+    <div className="row justify-content-center hero-image">
+      <div className="col-md-4">
         <div className="card">
-          <div className="card-body">
+          <div className="card-body text-center">
             <h2 className="text-center mb-4 font-weight-bold">
               Agregar Nuevo ticket
             </h2>
@@ -77,7 +95,7 @@ const NuevoTicket = ({ history }) => {
                 <label>Celda </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control "
                   name="celda"
                   value={celda}
                   onChange={(e) => setCelda(e.target.value)}
@@ -107,18 +125,19 @@ const NuevoTicket = ({ history }) => {
                 <label>Categoria</label>
                 <select  className="form-control" name="categoria"  value={categoria} onChange={(e) => setCategoria(e.target.value)}>
                   <option></option>
-                  <option>Motos</option>
+                  <option value="Motos">Motos</option>
                   <option>Carros</option>                  
                 </select>
               </div>
               <div className="form-group">
-                <label>Precio</label>
+                <label>Precio por Hora</label>
                 <input
+                disabled="true"
                   type="number"
                   className="form-control"
                   placeholder="Precio Producto"
                   name="precio"
-                  value={precio}
+                  value={CalcularPrecio()}
                   onChange={(e) => setPrecio(Number(e.target.value))}
                 />
               </div>

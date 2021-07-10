@@ -13,7 +13,7 @@ const Header = () => {
                 
                 {auth().currentUser ?
                     <div className="navbar-nav">
-                    <Link className="nav-item nav-link mr-3 btn btn-outline-secondary " to={"/"}>Reservar Celdas</Link>
+                    <Link className="nav-item nav-link mr-3 btn btn-outline-secondary " to={"/"}>Listado Tickets</Link>
                     &nbsp;
                     <Link className="nav-item nav-link mr-3 btn btn-outline-secondary " to={"/ticketes/nueva"}>Generar Tickets</Link>
 

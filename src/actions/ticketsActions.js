@@ -13,6 +13,7 @@ import {
 import clienteAxios from '../config/axios';
 import Swal from 'sweetalert2';
 import {db} from "../services/firebase";
+import {alertaUno} from "../alerts/sweetAlert"
 
 
 //Crear nuevos Ticketes
@@ -26,15 +27,18 @@ export function crearNuevoTicketAction(ticket){
                 ...ticket
             });
             
+            alertaUno();
             //Si todo sale bien, actualizare el state
             dispatch(agregarTicketExito(ticket))
 
+            
+
             //Alerta
-            Swal.fire(
-                'Correcto',
-                'La publicación se agregó correctamente',
-                'success'
-            )
+           // Swal.fire(
+           //     'Correcto',
+           //     'Registro de ingreso exitoso',
+           //     'success'
+            //)
         } catch (error) {
             console.log(error);
             //Si hay un error cambiar el state
@@ -113,3 +117,4 @@ const obtenerTicketVerAction = ticket =>({
     type: OBTENER_TICKET,
     payload: ticket
 })
+

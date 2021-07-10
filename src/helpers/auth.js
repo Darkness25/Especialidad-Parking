@@ -16,3 +16,23 @@ export function signInWithGoogle() {
   const provider = new auth.GoogleAuthProvider();
   return auth().signInWithPopup(provider);
 }
+
+export function signInWithGitHub() {
+  const provider = new auth.GithubAuthProvider();
+  return auth().signInWithPopup(provider);
+}
+
+export function signInWithFacebook(){
+  const provider = new auth.FacebookAuthProvider();
+  return auth().signInWithPopup(provider)
+}
+
+export function signInWithTwitter(){
+  const provider = new auth.TwitterAuthProvider();
+  return auth().signInWithPopup(provider)
+}
+
+export function signInWithMicrosoft(){
+  const provider = new auth.EmailAuthProvider();
+  return auth().signInWithPopup(provider)
+}
